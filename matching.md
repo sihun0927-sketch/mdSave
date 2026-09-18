@@ -20,4 +20,86 @@
 |              |                                           | `잘린상호`, `식당아님`     | `manual/{city}/classify.jsonl` → `merchant`, `status=non_restaurant`       | 광주 10건 중 non_restaurant만 `Y`                                                                                                                         |
 |              |                                           | `잘린상호`, `주소힌트`     | `manual/{city}/geocode.jsonl` → `scope.merchant`, `address`                | 광주 33건·울산 1건                                                                                                                                        |
 
-Next: "광주 records.csv 변환 스크립트 만들어줘"라고 보내면 첫 파일부터 만듭니다.
+
+### 1. 부산
+
+| 분류         | old 파일 (유지)              | old 항목                              | new 출처 → 요소                                                  | 변환                                                                                                                                                                                                      |
+| ------------ | ---------------------------- | ------------------------------------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **② 데이터** | `records.csv`                | `place`, `place_raw`                  | `data/busan/records.csv` → `merchant`                            | 그대로. 11,402행                                                                                                                                                                                          |
+|              |                              | `amount`                              | `amount_krw`                                                     | 빈 값 0건                                                                                                                                                                                                 |
+|              |                              | `date`                                | `spent_on`                                                       | 전부 `YYYY-MM-DD`                                                                                                                                                                                         |
+|              |                              | `purpose`, `dept`                     | `purpose`, `department`                                          | 그대로                                                                                                                                                                                                    |
+|              |                              | `source`                              | `organization`                                                   | `busan-city→busan_city`, `busan-jung→busan_junggu`, `busan-seo→busan_seogu`, `busan-dong→busan_donggu`, `busan-nam→busan_namgu`, `busan-buk→busan_bukgu`, 나머지는 `-`→`_`. new csv에 영도·사하·기장 없음 |
+|              |                              | `file`                                | `source_hash` → `fetch.json` `sources[].path`                    | 예 `busan/busan-city/expenses-mayor/21945-1.xlsx`                                                                                                                                                         |
+|              | `geocode_cache.json`         | 키 `{상호}\|부산`                     | `geocode.json` success `merchant`                                | old에 없는 568 상호 중 부산 주소 554개만 추가                                                                                                                                                             |
+|              |                              | `naver_name`, `address`, `lat`, `lng` | `lookup.candidates[]` 중 `latitude/longitude`가 결과와 같은 후보 | confirmation 0건이라 후보 매칭으로만                                                                                                                                                                      |
+|              |                              | `category`                            | `category-lookup-v1.jsonl` (1,708줄)                             | 후보 `source.source_id`로 조인                                                                                                                                                                            |
+|              |                              | `place_url`                           | 없음                                                             | 빈 문자열                                                                                                                                                                                                 |
+|              | `truncated_places_busan.csv` | 전체                                  | `data/manual/busan/` 없음                                        | 이관 없음 (old도 파일 없음)                                                                                                                                                                               |
+
+### 2. 대구
+
+| 분류         | old 파일 (유지)              | old 항목                              | new 출처 → 요소                               | 변환                                                                                                                                                        |
+| ------------ | ---------------------------- | ------------------------------------- | --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **② 데이터** | `records.csv`                | `place`, `place_raw`                  | `data/daegu/records.csv` → `merchant`         | 그대로. 11,335행                                                                                                                                            |
+|              |                              | `amount`                              | `amount_krw`                                  | 빈 값 0건                                                                                                                                                   |
+|              |                              | `date`                                | `spent_on`                                    | 전부 `YYYY-MM-DD`                                                                                                                                           |
+|              |                              | `purpose`, `dept`                     | `purpose`, `department`                       | 그대로                                                                                                                                                      |
+|              |                              | `source`                              | `organization`                                | `daegu-dong→daegu_donggu`, `daegu-seo→daegu_seogu`, `daegu-nam→daegu_namgu`, `daegu-city/suseong/dalseong/gunwi`는 `-`→`_`. new csv에 중구·북구·달서구 없음 |
+|              |                              | `file`                                | `source_hash` → `fetch.json` `sources[].path` | 예 `daegu/daegu-city/expenses/822983-1.xlsx`                                                                                                                |
+|              | `geocode_cache.json`         | 키 `{상호}\|대구`                     | `geocode.json` success `merchant`             | old에 없는 1,137 상호 중 대구 주소 1,127개만 추가                                                                                                           |
+|              |                              | `naver_name`, `address`, `lat`, `lng` | `lookup.candidates[]` 좌표 일치 후보          | confirmation 0건                                                                                                                                            |
+|              |                              | `category`                            | `category-lookup-v1.jsonl` (2,106줄)          | `source_id` 조인                                                                                                                                            |
+|              |                              | `place_url`                           | 없음                                          | 빈 문자열                                                                                                                                                   |
+|              | `truncated_places_daegu.csv` | 전체                                  | `data/manual/daegu/` 없음                     | 이관 없음                                                                                                                                                   |
+
+### 3. 대전
+
+| 분류         | old 파일 (유지)                       | old 항목                              | new 출처 → 요소                               | 변환                                                                                                                                        |
+| ------------ | ------------------------------------- | ------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **② 데이터** | `records.csv`                         | `place`, `place_raw`                  | `data/daejeon/records.csv` → `merchant`       | 그대로. 4,664행                                                                                                                             |
+|              |                                       | `amount`                              | `amount_krw`                                  | 빈 값 0건                                                                                                                                   |
+|              |                                       | `date`                                | `spent_on`                                    | 전부 `YYYY-MM-DD`                                                                                                                           |
+|              |                                       | `purpose`, `dept`                     | `purpose`, `department`                       | 그대로                                                                                                                                      |
+|              |                                       | `source`                              | `organization`                                | `daejeon-dong→daejeon_donggu`, `daejeon-jung→daejeon_junggu`, `daejeon-seo→daejeon_seogu`, `yuseong/daedeok`는 `-`→`_`. new csv에 시청 없음 |
+|              |                                       | `file`                                | `source_hash` → `fetch.json` `sources[].path` | 예 `daejeon/daejeon-dong/expenses-mayor/143190-….xlsx`                                                                                      |
+|              | `geocode_cache.json`                  | 키 `{상호}\|대전`                     | `geocode.json` success `merchant`             | old에 없는 1,074 상호 중 대전 주소 1,064개만 추가                                                                                           |
+|              |                                       | `naver_name`, `address`, `lat`, `lng` | `lookup.candidates[]` 좌표 일치 후보          | confirmation 0건                                                                                                                            |
+|              |                                       | `category`                            | `category-lookup-v1.jsonl` (1,341줄)          | `source_id` 조인                                                                                                                            |
+|              |                                       | `place_url`                           | 없음                                          | 빈 문자열                                                                                                                                   |
+|              | `truncated_places_daejeon.csv` (37행) | 전체                                  | `data/manual/daejeon/` 없음                   | 이관 없음. old 37행 유지                                                                                                                    |
+
+### 4. 울산
+
+| 분류         | old 파일 (유지)                     | old 항목                              | new 출처 → 요소                                                 | 변환                                               |
+| ------------ | ----------------------------------- | ------------------------------------- | --------------------------------------------------------------- | -------------------------------------------------- |
+| **② 데이터** | `records.csv`                       | `place`, `place_raw`                  | `data/ulsan/records.csv` → `merchant`                           | 그대로. 6,078행                                    |
+|              |                                     | `amount`                              | `amount_krw`                                                    | 빈 값 256건은 `expense_amount_krw`                 |
+|              |                                     | `date`                                | `spent_on`                                                      | 전부 `YYYY-MM-DD`                                  |
+|              |                                     | `purpose`, `dept`                     | `purpose`, `department`                                         | 그대로                                             |
+|              |                                     | `source`                              | `organization`                                                  | 6개 전부 `-`→`_` (`ulsan-junggu→ulsan_junggu` 등)  |
+|              |                                     | `file`                                | `source_hash` → `fetch.json` `sources[].path`                   | 예 `ulsan/ulsan-city/expenses-market/182571-1.pdf` |
+|              | `geocode_cache.json`                | 키 `{상호}\|울산`                     | `geocode.json` success `merchant`                               | old에 없는 425 상호 중 울산 주소 422개만 추가      |
+|              |                                     | `naver_name`, `address`, `lat`, `lng` | `lookup.candidates[]` 좌표 일치 후보                            | confirmation 0건                                   |
+|              |                                     | `category`                            | `category-lookup-v1.jsonl` (1,240줄)                            | `source_id` 조인                                   |
+|              |                                     | `place_url`                           | 없음                                                            | 빈 문자열                                          |
+|              | `truncated_places_ulsan.csv` (61행) | `잘린상호`, `주소힌트`                | `data/manual/ulsan/geocode.jsonl` → `scope.merchant`, `address` | 1건 추가                                           |
+|              |                                     | `정확한상호명`, `식당아님`            | `restore.jsonl`, `classify.jsonl` 없음                          | 이관 없음. `merchants.jsonl` 100건은 old 대응 없음 |
+
+### 5. 서울
+
+| 분류         | old 파일 (유지)              | old 항목          | new 출처 → 요소                                | 변환                         |
+| ------------ | ---------------------------- | ----------------- | ---------------------------------------------- | ---------------------------- |
+| **② 데이터** | `records.csv`                | 전체              | `data/seoul/orgs/*/fetch.json`만 있음 (25기관) | 이관 없음. parse 이전 단계   |
+|              | `geocode_cache.json`         | 키 `{상호}\|서울` | `geocode.json` 없음                            | 이관 없음. old 38,061건 유지 |
+|              | `truncated_places_seoul.csv` | 전체              | `data/manual/seoul/` 없음                      | 이관 없음                    |
+
+### 6. 인천
+
+| 분류         | old 파일 (유지)                | old 항목          | new 출처 → 요소                                                   | 변환                        |
+| ------------ | ------------------------------ | ----------------- | ----------------------------------------------------------------- | --------------------------- |
+| **② 데이터** | `records.csv`                  | 전체              | `data/incheon/fetch.json` (원본 5,682개), `headermap.json`만 있음 | 이관 없음. parse 이전 단계  |
+|              | `geocode_cache.json`           | 키 `{상호}\|인천` | `geocode.json` 없음                                               | 이관 없음. old 5,339건 유지 |
+|              | `truncated_places_incheon.csv` | 전체              | `data/manual/incheon/` 없음                                       | 이관 없음                   |
+
+Next: "부산부터 변환 스크립트"라고 보내면 4개 도시 공통 스크립트를 부산 기준으로 만듭니다.
