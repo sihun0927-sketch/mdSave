@@ -105,3 +105,17 @@
 - [ ] 7단계: 보정표 생성·수정 없음
 - [ ] 8단계: 보고 건수가 위 검증 값과 일치
 - [ ] `python map_builder.py` 부산 빌드 성공, 마커 수·레코드 수 변화 기록
+
+## 참조 파일 (OfficialDeliciousMap develop, 읽기 전용)
+
+저장소: https://github.com/snowjaewon/OfficialDeliciousMap (브랜치 `develop`)
+
+| 경로 | 링크 |
+|---|---|
+| `data/busan/records.csv` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/busan/records.csv |
+| `data/busan/fetch.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/busan/fetch.json |
+| `data/busan/geocode.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/busan/geocode.json |
+| `data/busan/category-lookup-v1.jsonl` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/busan/category-lookup-v1.jsonl |
+| `src/deliciousmap/registry/busan.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/registry/busan.py |
+| `src/deliciousmap/storage.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/storage.py |
+| `src/deliciousmap/contracts.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/contracts.py |

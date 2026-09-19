@@ -77,3 +77,15 @@ new develop에 `data/incheon/records.csv`와 `data/incheon/geocode.json`(분할 
 - 기관 12개 중 new에 실제 레코드가 있는 기관
 - old 캐시 `|인천` 5,339키와 겹치지 않는 new 성공 상호 수, 그중 관할 주소(`region_prefixes` + 11개 구·군) 안인 수
 - `data/manual/incheon/` 생성 여부
+
+## 참조 파일 (OfficialDeliciousMap develop, 읽기 전용)
+
+저장소: https://github.com/snowjaewon/OfficialDeliciousMap (브랜치 `develop`)
+
+| 경로 | 링크 |
+|---|---|
+| `data/incheon/fetch.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/incheon/fetch.json |
+| `data/incheon/headermap.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/incheon/headermap.json |
+| `src/deliciousmap/registry/incheon.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/registry/incheon.py |
+| `src/deliciousmap/storage.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/storage.py |
+| `src/deliciousmap/contracts.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/contracts.py |

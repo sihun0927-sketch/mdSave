@@ -100,3 +100,18 @@
 ## 사용자 결정 필요
 
 - 금액이 빈 256행(new에서 `expense_amount_krw`에만 금액이 있는 행)을 **제외**하는 것으로 설계했다. new의 expense 규칙을 가져오지 않기 위해서다. 채워서 넣을지, 제외할지 결정 필요.
+
+## 참조 파일 (OfficialDeliciousMap develop, 읽기 전용)
+
+저장소: https://github.com/snowjaewon/OfficialDeliciousMap (브랜치 `develop`)
+
+| 경로 | 링크 |
+|---|---|
+| `data/ulsan/records.csv` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/ulsan/records.csv |
+| `data/ulsan/fetch.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/ulsan/fetch.json |
+| `data/ulsan/geocode.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/ulsan/geocode.json |
+| `data/ulsan/category-lookup-v1.jsonl` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/ulsan/category-lookup-v1.jsonl |
+| `data/manual/ulsan/geocode.jsonl` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/manual/ulsan/geocode.jsonl |
+| `src/deliciousmap/registry/ulsan.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/registry/ulsan.py |
+| `src/deliciousmap/storage.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/storage.py |
+| `src/deliciousmap/contracts.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/contracts.py |

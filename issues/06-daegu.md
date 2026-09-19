@@ -101,3 +101,17 @@
 - [ ] 6단계: `NaN` 없음 (`json.loads` 후 `math.isfinite` 검사)
 - [ ] 7단계: `truncated_places_daegu.csv` 생성되지 않음
 - [ ] 이관 후 `python main.py` 빌드로 `dist/data/daegu.*.json` 재생성, 마커 수가 2,887 이상인지 확인
+
+## 참조 파일 (OfficialDeliciousMap develop, 읽기 전용)
+
+저장소: https://github.com/snowjaewon/OfficialDeliciousMap (브랜치 `develop`)
+
+| 경로 | 링크 |
+|---|---|
+| `data/daegu/records.csv` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/daegu/records.csv |
+| `data/daegu/fetch.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/daegu/fetch.json |
+| `data/daegu/geocode.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/daegu/geocode.json |
+| `data/daegu/category-lookup-v1.jsonl` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/daegu/category-lookup-v1.jsonl |
+| `src/deliciousmap/registry/daegu.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/registry/daegu.py |
+| `src/deliciousmap/storage.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/storage.py |
+| `src/deliciousmap/contracts.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/contracts.py |

@@ -89,3 +89,18 @@
 - [ ] 6단계: 추가 ≤ 1,064키. old `|대전` 2,018키 변동 없음. 추가 키의 주소가 전부 대전 5개 구
 - [ ] 7단계: `truncated_places_daejeon.csv` 37행 그대로
 - [ ] `python map_builder.py`로 대전 빌드 후 `dist/data/daejeon.*.json` 정상 생성
+
+## 참조 파일 (OfficialDeliciousMap develop, 읽기 전용)
+
+저장소: https://github.com/snowjaewon/OfficialDeliciousMap (브랜치 `develop`)
+
+| 경로 | 링크 |
+|---|---|
+| `data/daejeon/records.csv` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/daejeon/records.csv |
+| `data/daejeon/fetch.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/daejeon/fetch.json |
+| `data/daejeon/geocode.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/daejeon/geocode.json |
+| `data/daejeon/geocode.002.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/daejeon/geocode.002.json |
+| `data/daejeon/category-lookup-v1.jsonl` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/daejeon/category-lookup-v1.jsonl |
+| `src/deliciousmap/registry/daejeon.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/registry/daejeon.py |
+| `src/deliciousmap/storage.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/storage.py |
+| `src/deliciousmap/contracts.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/contracts.py |
