@@ -121,3 +121,23 @@ old의 council 소스 5개(`donggu_council`, `bukgu_council`, `gwangju_council`,
 
 1. **금액 빈 1,020행 제외 여부.** new는 반복 게시 합침(expense)으로 금액을 `expense_amount_krw`에만 남겼다. old 규칙에는 없는 처리라 기본은 제외. 채워서 넣으려면 중복 집계 위험을 감수해야 한다.
 2. **일 없는 날짜 2행 제외 여부.** `spent_on`이 `2026.03`, `2026.05`인 행. 기본은 제외. `-01`로 보정해 넣을지 결정 필요.
+
+## 참조 파일 (OfficialDeliciousMap develop, 읽기 전용)
+
+저장소: https://github.com/snowjaewon/OfficialDeliciousMap (브랜치 `develop`)
+
+| 경로 | 링크 |
+|---|---|
+| `data/gwangju/records.csv` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/gwangju/records.csv |
+| `data/gwangju/fetch.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/gwangju/fetch.json |
+| `data/gwangju/geocode.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/gwangju/geocode.json |
+| `data/gwangju/geocode.002.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/gwangju/geocode.002.json |
+| `data/gwangju/geocode.003.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/gwangju/geocode.003.json |
+| `data/gwangju/geocode.004.json` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/gwangju/geocode.004.json |
+| `data/gwangju/category-lookup-v1.jsonl` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/gwangju/category-lookup-v1.jsonl |
+| `data/manual/gwangju/restore.jsonl` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/manual/gwangju/restore.jsonl |
+| `data/manual/gwangju/classify.jsonl` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/manual/gwangju/classify.jsonl |
+| `data/manual/gwangju/geocode.jsonl` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/manual/gwangju/geocode.jsonl |
+| `src/deliciousmap/registry/gwangju.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/registry/gwangju.py |
+| `src/deliciousmap/storage.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/storage.py |
+| `src/deliciousmap/contracts.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/contracts.py |

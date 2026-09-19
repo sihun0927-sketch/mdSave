@@ -97,3 +97,14 @@ old `cities.py`의 `sources` 키 ↔ new `registry/seoul.py`의 org slug. new는
 ## 재개 조건
 
 new develop에 `data/seoul/records.csv`와 `data/seoul/geocode.json`이 생기면 광주 이슈와 같은 절차(1~8단계)로 진행한다. 그때 위 변환표를 그대로 쓰고, 강북구 fetch.json 유무를 다시 확인한다.
+
+## 참조 파일 (OfficialDeliciousMap develop, 읽기 전용)
+
+저장소: https://github.com/snowjaewon/OfficialDeliciousMap (브랜치 `develop`)
+
+| 경로 | 링크 |
+|---|---|
+| `data/seoul/orgs/ (25개 기관의 fetch.json, precheck 중단 판정용)` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/data/seoul/orgs/ |
+| `src/deliciousmap/registry/seoul.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/registry/seoul.py |
+| `src/deliciousmap/storage.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/storage.py |
+| `src/deliciousmap/contracts.py` | https://github.com/snowjaewon/OfficialDeliciousMap/blob/develop/src/deliciousmap/contracts.py |
